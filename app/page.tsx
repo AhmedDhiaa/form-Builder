@@ -186,15 +186,15 @@ export default async function HomePage() {
     <>
       <NavBar user={user} />
       <div className="min-h-[calc(100vh-4rem)] bg-gradient-to-br from-blue-50 via-white to-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h1 className="mb-4 text-5xl font-bold tracking-tight text-slate-900">Dynamic Form Builder</h1>
-            <p className="mx-auto max-w-2xl text-balance text-lg text-slate-600">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8 lg:py-12 sm:px-6 lg:px-8">
+          <div className="mb-8 sm:mb-12 text-center">
+            <h1 className="mb-3 sm:mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900">Dynamic Form Builder</h1>
+            <p className="mx-auto max-w-2xl text-balance text-base sm:text-lg text-slate-600 px-4">
               Create custom forms with ease, share them instantly, and collect responses in real-time
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <Card className="border-2 border-slate-200 transition-all hover:border-blue-500 hover:shadow-lg">
               <CardHeader>
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
