@@ -212,24 +212,24 @@ export default function ApiDocsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto p-3 sm:p-4">
         <div className="mb-4 sm:mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">API Documentation</h1>
-          <p className="text-sm sm:text-base text-gray-600 mb-4">
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">API Documentation</h1>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4">
             Complete API documentation for FormBuilder. Explore all available endpoints, request/response schemas, and try out the API directly.
           </p>
 
           {/* Authentication Status Card */}
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 sm:p-4 mb-4">
+          <div className="bg-card border-2 rounded-lg p-3 sm:p-4 mb-4 shadow-sm">
             {isAuthenticated ? (
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs sm:text-sm font-medium text-green-700 truncate">
+                  <p className="text-xs sm:text-sm font-medium text-green-700 dark:text-green-400 truncate">
                     ✓ Authenticated as {user?.email || user?.name || "User"}
                   </p>
                   {user?.name && (
-                    <p className="text-xs text-gray-600 mt-1 truncate">{user.name}</p>
+                    <p className="text-xs text-muted-foreground mt-1 truncate">{user.name}</p>
                   )}
                 </div>
                 <button
@@ -241,7 +241,7 @@ export default function ApiDocsPage() {
               </div>
             ) : (
               <div>
-                <p className="text-xs sm:text-sm font-medium text-gray-700 mb-3">
+                <p className="text-xs sm:text-sm font-medium text-foreground mb-3">
                   ⚠ Not authenticated. Login to access protected endpoints.
                 </p>
                 <form onSubmit={handleLogin} className="space-y-3">
@@ -251,27 +251,27 @@ export default function ApiDocsPage() {
                       name="email"
                       placeholder="Email"
                       required
-                      className="flex-1 px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 px-3 py-2 text-sm sm:text-base border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                     <input
                       type="password"
                       name="password"
                       placeholder="Password"
                       required
-                      className="flex-1 px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 px-3 py-2 text-sm sm:text-base border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                     <button
                       type="submit"
                       disabled={loginLoading}
-                      className="w-full sm:w-auto px-4 sm:px-6 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                      className="w-full sm:w-auto px-4 sm:px-6 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-colors"
                     >
                       {loginLoading ? "Logging in..." : "Login"}
                     </button>
                   </div>
                   {loginError && (
-                    <p className="text-xs sm:text-sm text-red-600">{loginError}</p>
+                    <p className="text-xs sm:text-sm text-destructive">{loginError}</p>
                   )}
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-muted-foreground">
                     Don't have an account? Use the <strong>POST /api/auth/register</strong> endpoint below to create one.
                   </p>
                 </form>

@@ -175,7 +175,7 @@ export function FormsListContent({ userId }: { userId: number }) {
   }
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] bg-gradient-to-br from-blue-50 via-white to-slate-50 py-8">
+    <div className="min-h-[calc(100vh-4rem)] bg-gradient-to-br from-primary/5 via-background to-accent/10 dark:from-primary/10 dark:via-background dark:to-accent/5 py-8">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-6">
           <Link href="/">
@@ -223,10 +223,10 @@ export function FormsListContent({ userId }: { userId: number }) {
               const fields = typeof form.fields === "string" ? JSON.parse(form.fields) : form.fields
 
               return (
-                <Card key={form.id} className="border border-slate-200 transition-shadow hover:shadow-lg">
+                <Card key={form.id} className="group border-2 transition-all duration-300 hover:border-primary/50 hover:shadow-xl dark:hover:shadow-primary/10 bg-card/50 backdrop-blur-sm">
                   <CardHeader>
-                    <CardTitle className="text-lg">{form.title}</CardTitle>
-                    <CardDescription className="line-clamp-2">{form.description || "No description"}</CardDescription>
+                    <CardTitle className="text-lg sm:text-xl font-semibold">{form.title}</CardTitle>
+                    <CardDescription className="line-clamp-2 text-sm">{form.description || "No description"}</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-center justify-between text-sm text-slate-500">
