@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'FormBuilder - Dynamic Form Builder',
   description: 'Create custom forms with ease, share them instantly, and collect responses in real-time',
-  generator: 'v0.app',
+  generator: 'Team 2',
   viewport: {
     width: 'device-width',
     initialScale: 1,
